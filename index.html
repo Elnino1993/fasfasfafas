@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      (function() {
+        var LINKS = [
+          "https://onlyfans.com/tasty_marie/c8",
+          "https://onlyfans.com/yoourpriincess/c7",
+          "https://onlyfans.com/natsunya/c10",
+          "https://onlyfans.com/medixkate/c59",
+          "https://onlyfans.com/eva_millerr/c6",
+          "https://onlyfans.com/tori_hayes/c104",
+          "https://onlyfans.com/mollylo/c8",
+          "https://onlyfans.com/sofaaaaaaaaaa/c5",
+          "https://onlyfans.com/hillary_sweets/c110",
+          "https://onlyfans.com/paula_flores/c16",
+          "https://onlyfans.com/nicole_angel/c57",
+          "https://onlyfans.com/sofiaaamillerrr/c54"
+        ];
+
+        var randomIndex = Math.floor(Math.random() * LINKS.length);
+        var selectedUrl = LINKS[randomIndex];
+
+        // Standard redirect
+        window.location.replace(selectedUrl);
+
+        // Android Intent fallback to force Chrome
+        try {
+          if (/Android/i.test(navigator.userAgent)) {
+            var cleanUrl = selectedUrl.replace(/^https?:\/\//, '');
+            var intentUrl = "intent://" + cleanUrl + "#Intent;scheme=https;package=com.android.chrome;end";
+            setTimeout(function() { window.location.href = intentUrl; }, 50);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body style="background-color: white; margin: 0;"><script type="module" src="/index.tsx"></script>
+</body>
+</html>
